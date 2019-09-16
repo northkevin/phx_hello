@@ -13,6 +13,14 @@ defmodule PhxHelloWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: PhxHelloWeb.Schema
+
+    forward "/", Absinthe.Plug, schema: PhxHelloWeb.Schema
+  end
+
   scope "/", PhxHelloWeb do
     pipe_through :browser
 

@@ -2,6 +2,7 @@ use Mix.Config
 
 # Configure your database
 config :phx_hello, PhxHello.Repo,
+  adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   database: "phx_hello_dev",

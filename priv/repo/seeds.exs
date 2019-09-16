@@ -9,3 +9,20 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+alias PhxHello.{Accounts, Content}
+
+user =
+  %Accounts.User{}
+  |> Accounts.User.changeset(%{name: "Test", password: "test"})
+  |> PhxHello.Repo.insert!()
+
+user
+|> Ecto.build_assoc(:contacts, %{type: "email", value: "test@test.com"})
+|> PhxHello.Repo.insert!()
+
+Content.create_post(user, %{
+  title: "Test Post",
+  body: "Lorem Ipsum",
+  published_at: ~N[2017-10-26 10:00:00]
+})
