@@ -1,0 +1,7 @@
+absinthe --> order of execution
+
+1. schema definition --> this is the ORM definitions of what the schema is for the db objects table/row/column etc..
+
+	* errors like incorrect arguments sent by a user will be handled by absinthe at this time 
+
+2. resolver definition --> this is where we 'pattern match' the incoming graphql requests that come in from a potential user & I think it is where we build what the response is.

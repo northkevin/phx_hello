@@ -1,6 +1,8 @@
 defmodule PhxHelloWeb.Schema do
   use Absinthe.Schema
   import_types(PhxHelloWeb.Schema.ContentTypes)
+  import_types(PhxHelloWeb.Schema.AccountTypes)
+  import_types(Absinthe.Type.Custom)
 
   alias PhxHelloWeb.Resolvers
 
