@@ -28,5 +28,14 @@ defmodule PhxHelloWeb.Schema do
 
       resolve(&Resolvers.Content.create_post/3)
     end
+
+    @desc "Create a user"
+    field :create_user, :user do
+      arg(:name, non_null(:string))
+      arg(:contact, non_null(:contact_input))
+      arg(:password, non_null(:string))
+
+      resolve(&Resolvers.Accounts.create_user/3)
+    end
   end
 end

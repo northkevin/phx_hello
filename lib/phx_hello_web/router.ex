@@ -11,6 +11,7 @@ defmodule PhxHelloWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug PhxHelloWeb.Context
   end
 
   scope "/api" do
