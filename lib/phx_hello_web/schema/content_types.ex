@@ -6,4 +6,6 @@ defmodule PhxHelloWeb.Schema.ContentTypes do
     field :title, :string
     field :body, :string
   end
+
+  field :author, :user
 end
